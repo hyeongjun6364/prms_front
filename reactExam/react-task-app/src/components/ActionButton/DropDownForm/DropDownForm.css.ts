@@ -48,7 +48,7 @@ export const button = style({
   },
 });
 
-export const buttons2 = style({
+export const buttons = style({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
