@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders book store', () => {
   render(<App />);
-  const linkElement = screen.getByText(/book/i);
+  const linkElement = screen.getByText(/Book/i);
   expect(linkElement).toBeInTheDocument();
 });
