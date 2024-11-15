@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import styled from 'styled-components';
 import { ButtonSchema, ButtonSize } from '../../style/theme';
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   size: ButtonSize;
   scheme: ButtonSchema;
