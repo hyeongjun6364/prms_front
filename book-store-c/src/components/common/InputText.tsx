@@ -1,4 +1,4 @@
-import React, { forwardRef, ForwardedRef, InputHTMLAttributes } from 'react';
+import React, { ForwardedRef, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;

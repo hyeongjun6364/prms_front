@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../asset/book.png';
 import styled from 'styled-components';
 

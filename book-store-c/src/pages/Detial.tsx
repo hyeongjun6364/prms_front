@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Detial = () => {
   return <div>Detial</div>;
 };
