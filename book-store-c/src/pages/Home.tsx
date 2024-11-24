@@ -1,18 +1,20 @@
-import Title from '../components/common/Title';
-import Button from '../components/common/Button';
-import InputText from '../components/common/InputText';
+import Title from '@/components/common/Title';
+import { useEffect } from 'react';
+import styled from 'styled-components';
 
 const Home = () => {
+  useEffect(() => {}, []);
+
   return (
-    <>
-      <Title size="medium">제목 테스트</Title>
-      <Button size="large" scheme="normal">
-        버튼 테스트
-      </Button>
-      <InputText placeholder="여기에 입력해주세요" />
-      <div>Book store</div>
-    </>
+    <HomeStyle>
+      <Title size="large" color="text">
+        내용
+      </Title>
+    </HomeStyle>
   );
 };
+const HomeStyle = styled.div`
+  color: ${({ theme }) => theme.color.primary};
+`;
 
 export default Home;
