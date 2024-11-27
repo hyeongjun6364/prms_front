@@ -1,20 +1,42 @@
+import Banner from '@/components/common/banner/Banners';
 import Title from '@/components/common/Title';
-import { useEffect } from 'react';
+import MainBest from '@/components/main/MainBest';
+import MainNewBooks from '@/components/main/MainNewBooks';
+import MainReview from '@/components/main/MainReview';
+import { useMain } from '@/hooks/useMain';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import styled from 'styled-components';
 
 const Home = () => {
-  useEffect(() => {}, []);
+  const { reviews, newBooks, bestBooks, banners } = useMain();
+  const { isMobile } = useMediaQuery();
+
+  console.log(isMobile);
 
   return (
     <HomeStyle>
-      <Title size="large" color="text">
-        내용
-      </Title>
+      <Banner banners={banners} />
+      <section className="section">
+        <Title size="large">베스트 셀러</Title>
+        <MainBest books={bestBooks} />
+      </section>
+
+      <section className="section">
+        <Title size="large">신간 안내</Title>
+        <MainNewBooks books={newBooks} />
+      </section>
+
+      <section className="section">
+        <Title size="large">리뷰</Title>
+        <MainReview reviews={reviews} />
+      </section>
     </HomeStyle>
   );
 };
 const HomeStyle = styled.div`
-  color: ${({ theme }) => theme.color.primary};
+  display: flex;
+  flex-direction: column;
+  gap: 24p;
 `;
 
 export default Home;

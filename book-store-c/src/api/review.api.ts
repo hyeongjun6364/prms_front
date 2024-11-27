@@ -1,5 +1,6 @@
 import { BookReviewItem } from '@/models/book.model';
 import { requestHandler } from './http';
+import { Retryer } from 'react-query/types/core/retryer';
 
 export const fetchBookReview = async (bookId: string) => {
   return await requestHandler<BookReviewItem[]>('get', `/reviews/${bookId}`);
@@ -20,3 +21,7 @@ export const addBookReview = async (
 };
 
 export type BookReviewItemWrite = Pick<BookReviewItem, 'content' | 'score'>;
+
+export const fetchReviewAll = async () => {
+  return await requestHandler<BookReviewItem[]>('get', '/reviews');
+};
